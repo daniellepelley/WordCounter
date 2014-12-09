@@ -47,47 +47,40 @@ namespace WordCounter
                 return Disposable.Empty;
             });
         }
-    }
 
-    public interface IWordCounter
-    {
-        void AddWord(string word);
-    }
-
-    public class TrieNodeWordCounter : IWordCounter
-    {
-        private readonly TrieNode _node = new TrieNode(null, (char)10);
-
-        public void AddWord(string word)
+        public void BruteForce(string file, IWordCounter counter)
         {
-            _node.AddWord(word);
-        }
-    }
+            var nonLetters = GetNonLetters();
 
-    public class DictionaryWordCounter : IWordCounter
-    {
-        private readonly Dictionary<string, int> _results = new Dictionary<string, int>();
-
-        public Dictionary<string, int> Results
-        {
-            get { return _results; }
-        }
-
-        public void AddWord(string word)
-        {
-            if (Results.ContainsKey(word))
+            using (var reader = new StreamReader(file))
             {
-                Results[word]++;
-            }
-            else
-            {
-                Results.Add(word, 1);
+                while (!reader.EndOfStream)
+                {
+                    var readLine = reader.ReadLine();
+
+                    if (readLine == null)
+                    {
+                        continue;
+                    }
+                    foreach (
+                        var word in
+                            readLine.Split(nonLetters, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        counter.AddWord(word);
+                    }
+                }
             }
         }
+
+        public Dictionary<string, int> GetWordFrequency(string file)
+        {
+            var nonLetters = GetNonLetters();
+
+            return File.ReadLines(file)
+                       .SelectMany(x => x.Split(nonLetters))
+                       .Where(x => x != string.Empty)
+                       .GroupBy(x => x)
+                       .ToDictionary(x => x.Key, x => x.Count());
+        }
     }
-
-
-
-
-
 }

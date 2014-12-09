@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter", "WordCounter\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Tests", "WordCounter.Tests\WordCounter.Tests.csproj", "{E096DC41-CEA8-48FB-9CEE-35F9C55ED4D9}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WordCounterFSharp", "WordCounterFSharp\WordCounterFSharp.fsproj", "{B7207B66-E6D1-4DD0-B590-B4BA100338B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E096DC41-CEA8-48FB-9CEE-35F9C55ED4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E096DC41-CEA8-48FB-9CEE-35F9C55ED4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E096DC41-CEA8-48FB-9CEE-35F9C55ED4D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7207B66-E6D1-4DD0-B590-B4BA100338B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7207B66-E6D1-4DD0-B590-B4BA100338B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7207B66-E6D1-4DD0-B590-B4BA100338B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7207B66-E6D1-4DD0-B590-B4BA100338B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -51,7 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DictionaryWordCounter.cs" />
+    <Compile Include="IWordCounter.cs" />
     <Compile Include="TrieNode.cs" />
+    <Compile Include="TrieNodeWordCounter.cs" />
     <Compile Include="WordStreamer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
